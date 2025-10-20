@@ -22,8 +22,8 @@ public class TareaController {
     @Autowired
     private TareaMapper tareaMapper;
 
-    //PUT
-    @PutMapping("/create")
+    //POST
+    @PostMapping("/create")
     public ResponseEntity<TareaResponseDTO> putTarea(@RequestBody TareaRequestDTO tareaRequestDTO){
         Tarea tarea = tareaMapper.toEntity(tareaRequestDTO);
         Tarea nuevaTarea = tareaService.save(tarea);
